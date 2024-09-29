@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulario.css">
+    <title>Forms Inputs</title>
+    
+</head>
+
+<body>
+    <div class="content">
+        <h1>Formulário</h1>
+        <form>
+            <div>
+                <input type="text" name="chkName" id="chkName" placeholder="Insira seu nome" class="inputs" oninput="nameValidate()">
+                <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+            </div>
+
+            <div>
+                <input type="email" name="chkEmail" id="chkEmail" placeholder="Insira seu email" class="inputs">
+                <span class="span-required">Email inválido</span>
+            </div>
+
+            <div>
+                <input type="password" name="chkPassword" placeholder="Insira uma senha" class="inputs">
+                <span class="span-required">Mínimo de 8 caracteres</span>
+            </div>
+
+            <div>
+                <input type="password" name="chkPassword" placeholder="Repita sua senha" class="inputs">
+                <span class="span-required">Senha não coincide</span>
+            </div>
+
+            <textarea name="descricao" id="descricao" cols="25" rows="10" placeholder="Fale um pouco sobre você..." class="inputs"></textarea>
+            <p>Sexo:</p>
+            <div class="box-select">
+                <div>
+                    <input type="radio" id="m" value="m" name="sex">
+                    <label for="m">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" id="f" value="f" name="sex">
+                    <label for="f">Feminino</label>
+                </div>
+                <div>
+                    <input type="radio" id="o" value="o" name="sex">
+                    <label for="o">Outro</label>
+                </div>
+            </div>
+            <p>Quais as suas experiências ?</p>
+            <div class="box-select">
+                <div>
+                    <input type="checkbox" id="JS" name="experiencias" id="chkExp">
+                    <label for="JS">Java Script</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="HTML" name="experiencias" id="chkExp">
+                    <label for="HTML">HTML</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="CSS" name="experiencias" id="chkExp">
+                    <label for="CSS">CSS</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="PHP" name="experiencias" id="chkExp">
+                    <label for="PHP">PHP</label>
+                </div>
+            </div>
+            
+            
+            <button type="submit">Enviar</button>
+        </form>
+        </div>
+</body>
+<script>
+
+    const form = document.getElementById('form')
+    const campos = document.querySelectorAll('.required')
+    const spans = document.querySelectorAll('.span-required')
+    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+    function nameValidate(){
+        if(campos[0].value.length < 3){
+            console.log("Nome deve ter 3 carateres")
+        }
+        else{
+            console.log("Nome validado")
+        }
+    }
+
+    </script>
+</html>
